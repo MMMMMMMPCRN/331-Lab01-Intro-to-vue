@@ -11,11 +11,14 @@ createApp({
 
         const link = ref('https://www.camt.cmu.ac.th')
 
+        const inStock = ref(true)
+
         return {
             product,
             desc,
             image,
-            link
+            link,
+            inStock
         }
     }
 }).mount('#app')
