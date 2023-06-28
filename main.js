@@ -8,10 +8,14 @@ createApp({
         const desc = ref('Boots description')
 
         const image = ref('./assets/images/socks_green.jpg')
+
+        const link = ref('https://www.camt.cmu.ac.th')
+
         return {
             product,
             desc,
-            image
+            image,
+            link
         }
     }
 }).mount('#app')
