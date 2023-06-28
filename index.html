@@ -54,7 +54,8 @@
                 Sizes: {{ sizes.join(', ') }} 
             </div>
 
-            <button class="button" v-on:click="addToCart">Add To Cart</button>
+            <!-- <button class="button" v-on:click="addToCart">Add To Cart</button> -->
+            <button class="button" @click="addToCart">Add To Cart</button>
 
             <p v-if="onSale">This product is on SALE!!!</p>
             <p v-else>This product is not on sale</p> 
