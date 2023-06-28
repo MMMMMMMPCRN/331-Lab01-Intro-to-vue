@@ -11,7 +11,10 @@ createApp({
 
         const link = ref('https://www.camt.cmu.ac.th')
 
-        const inStock = ref(true)
+        // const inStock = ref(true)
+
+        const inStock = ref(false)
+
 
         return {
             product,
