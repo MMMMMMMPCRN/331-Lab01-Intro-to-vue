@@ -17,13 +17,16 @@ createApp({
 
         const inventory = ref(100)
 
+        const onSale = ref(true)
+
         return {
             product,
             desc,
             image,
             link,
             inStock,
-            inventory
+            inventory,
+            onSale
         }
     }
 }).mount('#app')
