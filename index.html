@@ -38,9 +38,19 @@
             <!-- <p>In Stock</p>
             <p>Out of Stock</p> -->
             <!-- <p v-if="inStock">In Stock</p> -->
-            <p v-if="inventory > 10">In Stock</p>
+            <!-- Stock status display -->
+
+            <p v-if="inventory > 10 && isInStock">In Stock</p>
             <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
             <p v-else>Out of Stock</p>
+
+            <!-- <p v-if="isInStock">In Stock</p>
+            <p v-else>Out of Stock</p> -->
+
+            <!-- Toggle stock status button -->
+            <button class="button" @click="toggleStockStatus">
+                Stock Status
+            </button>
 
             <ul>
                 <li v-for="detail in details">{{detail}}</li>

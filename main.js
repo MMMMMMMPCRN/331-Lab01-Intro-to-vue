@@ -15,6 +15,8 @@ createApp({
 
         const inStock = ref(false)
 
+        const isInStock = ref(true)
+
         const inventory = ref(100)
 
         const onSale = ref(true)
@@ -45,6 +47,10 @@ createApp({
                 image.value = variantImage
             }
 
+            function toggleStockStatus() {
+                isInStock.value = isInStock.value;
+            }
+
         return {
             product,
             desc,
@@ -58,7 +64,9 @@ createApp({
             sizes,
             cart,
             addToCart,
-            updateImage
+            updateImage,
+            isInStock,
+            toggleStockStatus
         }
     }
 }).mount('#app')
