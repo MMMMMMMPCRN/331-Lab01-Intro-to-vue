@@ -16,6 +16,9 @@
         <!-- <h1>{{product}}</h1> -->
 
         <div class="nav-bar"></div>
+
+        <div class="cart">Cart{{cart}}</div>
+
         <div class="product-display">
             <div class="product-container">
                 <div class="product-image">
@@ -50,7 +53,9 @@
             <div class="size-options">
                 Sizes: {{ sizes.join(', ') }} 
             </div>
-            
+
+            <button class="button" v-on:click="addToCart">Add To Cart</button>
+
             <p v-if="onSale">This product is on SALE!!!</p>
             <p v-else>This product is not on sale</p> 
         </div>

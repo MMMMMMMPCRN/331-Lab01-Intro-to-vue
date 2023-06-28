@@ -34,6 +34,11 @@ createApp({
             'S', 'M', 'L'
         ])
 
+        const cart = ref(0)
+            function addToCart() {
+                cart.value += 1
+            }
+
         return {
             product,
             desc,
@@ -44,7 +49,9 @@ createApp({
             onSale,
             details,
             variants,
-            sizes
+            sizes,
+            cart,
+            addToCart
         }
     }
 }).mount('#app')
