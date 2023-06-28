@@ -25,6 +25,11 @@ createApp({
             '20% polyester'
         ])
 
+        const variants = ref([
+            { id: 2234, color: 'green' },
+            { id: 2235, color: 'blue' }
+        ])
+
         return {
             product,
             desc,
@@ -33,7 +38,8 @@ createApp({
             inStock,
             inventory,
             onSale,
-            details
+            details,
+            variants
         }
     }
 }).mount('#app')
