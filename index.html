@@ -47,6 +47,10 @@
                 {{variant.color}}
             </div>
 
+            <div class="size-options">
+                Sizes: {{ sizes.join(', ') }} 
+            </div>
+            
             <p v-if="onSale">This product is on SALE!!!</p>
             <p v-else>This product is not on sale</p> 
         </div>
