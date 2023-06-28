@@ -57,7 +57,8 @@
             </ul>
 
             <div v-for="variant in variants" :key="variant.id"
-            @mouseover = "updateImage(variant.image)">
+            @mouseover = "updateImage(variant.image)"
+            class="color-circle" :style="{backgroundColor: variant.color}">
                 {{variant.color}}
             </div>
 
