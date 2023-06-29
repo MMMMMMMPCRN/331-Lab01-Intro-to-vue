@@ -13,9 +13,7 @@ createApp({
 
         // const inStock = ref(true)
 
-        const inStock = ref(false)
-
-        const isInStock = ref(true)
+        const inStock = ref(true)
 
         const inventory = ref(100)
 
@@ -48,7 +46,7 @@ createApp({
             }
 
             function toggleStockStatus() {
-                isInStock.value = isInStock.value;
+                inStock.value = !inStock.value;
             }
 
         return {
@@ -65,7 +63,6 @@ createApp({
             cart,
             addToCart,
             updateImage,
-            isInStock,
             toggleStockStatus
         }
     }
