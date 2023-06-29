@@ -33,6 +33,7 @@ const productDisplay = {
             :class="{disabledButton: !inStock}">Add To Cart
             </button>
 
+            <review-list :reviews="reviews"></review-list>
             <review-form @review-submitted="addReview"></review-form>
         </div>
     </div>
@@ -41,7 +42,8 @@ const productDisplay = {
     // setup() {
 
     props: {
-        premium: Boolean
+        premium: Boolean,
+        reviews: Array
     },
 
     setup(props, {emit}){
@@ -98,6 +100,12 @@ const productDisplay = {
             image.value = variantImage
         }
 
+        function addReview(review) {
+            reviews.value.push(review);
+            console.log('New Review:', review)
+          }
+      
+
         return {
             title,
             image,
@@ -108,7 +116,8 @@ const productDisplay = {
             addToCart,
             updateImage,
             updateVariant,
-            shipping
+            shipping,
+            addReview
         }
     }
 }
