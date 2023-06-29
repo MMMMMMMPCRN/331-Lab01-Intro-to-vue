@@ -1,4 +1,4 @@
-const reviewList = {
+const ReviewList = {
 
     template:
         /*html*/

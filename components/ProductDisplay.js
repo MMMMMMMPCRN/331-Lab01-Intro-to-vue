@@ -35,7 +35,7 @@ const productDisplay = {
 
             <button class="button" @click="removeFromCart">Remove From Cart</button>
 
-            <review-list :reviews="reviews"></review-list>
+            <review-list v-if="reviews.length" :reviews="reviews"></review-list>
             <review-form @review-submitted="addReview"></review-form>
         </div>
     </div>
@@ -44,8 +44,7 @@ const productDisplay = {
     // setup() {
 
     props: {
-        premium: Boolean,
-        reviews: Array
+        premium: Boolean
     },
 
     setup(props, {emit}){
