@@ -35,9 +35,10 @@ const productDisplay = {
 
             <button class="button" @click="removeFromCart">Remove From Cart</button>
 
-            <review-list v-if="reviews.length" :reviews="reviews"></review-list>
-            <review-form @review-submitted="addReview"></review-form>
         </div>
+
+        <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+            <review-form @review-submitted="addReview"></review-form>
     </div>
     `,
     

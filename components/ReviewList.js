@@ -1,4 +1,4 @@
-const ReviewList = {
+const reviewList = {
 
     template:
         /*html*/
@@ -16,7 +16,8 @@ const ReviewList = {
 
         props: {
             reviews: {
-                type: Array
+                type: Array,
+                required: true
             }
         },
         setup(props){
