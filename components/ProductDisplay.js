@@ -10,6 +10,7 @@ const productDisplay = {
                 <img :src="image">
             </div>
         </div>
+        
         <div class="product-info">
             <h1>{{title}}</h1>
             <p v-if="inventory > 10">In Stock</p>
@@ -41,14 +42,14 @@ const productDisplay = {
         premium: Boolean
     },
 
-    setup(props){
+    setup(props, {emit}){
         const shipping = computed(() => {
             if (props.premium){
-                return 'Free'
-            } else {
-                return 30
-            }
-        })
+        return 'Free'
+        } else {
+            return 30
+        }
+    })
 
         const product = ref('Boots')
         const brand = ref('SE 331')
@@ -78,7 +79,8 @@ const productDisplay = {
         })
 
         function addToCart() {
-            cart.value += 1
+            // cart.value += 1
+            emit('add-to-cart', variants.value[selectedVariant.value].id)
         }
 
         const title = computed(() => {

@@ -3,8 +3,13 @@ const { createApp, ref, computed } = Vue
 const app = createApp({
 
     setup(){
-        const cart = ref(0)
-        const premium = ref(false)
+        const cart = ref([])
+        const premium = ref(true)
+
+        function updateCart(id){
+            cart.value.push(id)
+        }
+
         const details = ref([
             '50% cotton',
             '30% wool',
@@ -13,7 +18,8 @@ const app = createApp({
         return {
             cart,
             premium,
-            details
+            details,
+            updateCart
         }
     }
 
