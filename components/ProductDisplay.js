@@ -62,6 +62,7 @@ const productDisplay = {
         function addReview(review){
             reviews.value.push(review)
             console.log('New Review:', review)
+            console.log('Would Recommend:', review.recommend)
         }
         
         const product = ref('Boots')
