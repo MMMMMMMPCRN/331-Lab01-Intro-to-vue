@@ -16,9 +16,13 @@ const productDisplay = {
             <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p>
             <p v-else>Out of Stock</p>
             <p>Shipping: {{shipping}}</p>
-            <ul>
-                <li v-for="detail in details">{{detail}}</li>
-            </ul>
+
+            <div class="product-details">
+                <ul>
+                    <li v-for="detail in details" :key="detail">{{detail}}</li>
+                </ul>
+            </div>
+
             <div v-for="(variant, index) in variants" :key="variant.id"
             @mouseover="updateVariant(index)"
             class="color-circle" :style="{backgroundColor: variant.color}">
@@ -45,7 +49,7 @@ const productDisplay = {
                 return 30
             }
         })
-        
+
         const product = ref('Boots')
         const brand = ref('SE 331')
         const inventory = ref(100)
@@ -99,3 +103,14 @@ const productDisplay = {
         }
     }
 }
+
+const productDetails = {
+    props: {
+      details: {
+        type: Array,
+        required: true
+      }
+    },
+    
+  };
+  
