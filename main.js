@@ -58,7 +58,14 @@ createApp({
             }
 
             const title = computed(() =>{
-                return brand.value + ' ' + product.value
+                // return brand.value + ' ' + product.value
+                const baseTitle =  brand.value + ' ' + product.value
+                if (onSale.value) {
+                    return baseTitle + ' is on sale'
+                } else {
+                    return baseTitle
+                }
+
             })
 
             function updateImage(variantImage){
