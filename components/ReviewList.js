@@ -4,14 +4,14 @@ const reviewList = {
         /*html*/
         `
         <div class="review-container">
-            <h3>Reviews:</h3>
-            <ul>
-                <li v-for="(review, index) in reviews" :key="index">
-                    {{ reviex.name }} gave this {{ review.rating }} stars
-                    <br/>
-                </li>
-            </ul>
-        </div>
+        <h3>Reviews:</h3>
+        <ul>
+            <li v-for="(review, index) in reviews" :key="index">
+                {{ review.name }} gave this {{ review.rating }} stars
+                <br/>
+            </li>
+        </ul>
+    </div>
         `,
 
         props: {

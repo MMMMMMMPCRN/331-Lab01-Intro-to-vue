@@ -10,16 +10,26 @@ const app = createApp({
             cart.value.push(id)
         }
 
-        const details = ref([
-            '50% cotton',
-            '30% wool',
-            '20% polyester'
-        ])
+        // const details = ref([
+        //     '50% cotton',
+        //     '30% wool',
+        //     '20% polyester'
+        // ])
+
+        function removeFromCart(id) {
+            const index = cart.value.findIndex((item) => item === id)
+            if (index !== -1) {
+                cart.value.splice(index, 1)
+            }
+        }
+
         return {
             cart,
             premium,
-            details,
-            updateCart
+            // details,
+            updateCart,
+            removeFromCart
+
         }
     }
 
