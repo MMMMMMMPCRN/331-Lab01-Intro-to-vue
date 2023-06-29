@@ -13,7 +13,7 @@ createApp({
 
         // const inStock = ref(true)
 
-        const inStock = ref(true)
+        const inStock = ref(false)
 
         const inventory = ref(100)
 
