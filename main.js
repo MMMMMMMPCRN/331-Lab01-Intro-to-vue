@@ -85,7 +85,8 @@ createApp({
             updateImage,
             toggleStockStatus,
             // brand,
-            title
+            title,
+            updateVariant
         }
     }
 }).mount('#app')
