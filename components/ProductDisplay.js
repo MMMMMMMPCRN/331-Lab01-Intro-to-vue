@@ -32,6 +32,8 @@ const productDisplay = {
             <button class="button" :disabled='!inStock' @click="addToCart"
             :class="{disabledButton: !inStock}">Add To Cart
             </button>
+
+            <review-form @review-submitted="addReview"></review-form>
         </div>
     </div>
     `,
@@ -51,6 +53,11 @@ const productDisplay = {
         }
     })
 
+        const reviews = ref([])
+        function addReview(review){
+            reviews.value.push(review)
+        }
+        
         const product = ref('Boots')
         const brand = ref('SE 331')
         const inventory = ref(100)
