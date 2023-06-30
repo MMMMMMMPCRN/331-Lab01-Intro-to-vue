@@ -3,11 +3,15 @@ const { createApp, ref, reactive, computed } = Vue
 const app = createApp({
 
     setup(){
-        const cart = ref([])
+        const cart = ref(0)
         const premium = ref(true)
 
-        function updateCart(id){
-            cart.value.push(id)
+        // function updateCart(id){
+        //     cart.value.push(id)
+        // }
+
+        function updateCart(){
+            cart.value += 1
         }
 
         // const details = ref([

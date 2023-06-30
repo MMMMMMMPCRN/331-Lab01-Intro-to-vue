@@ -6,8 +6,7 @@ const productDisplay = {
     `
     <div class="product-display">
         <div class="product-container">
-            <div class="product-image">
-                <img :src="image">
+        <div class="product-image" :class="{'out-of-stock-img': !inStock}">                <img :src="image">
             </div>
         </div>
         
@@ -91,8 +90,9 @@ const productDisplay = {
         })
 
         function addToCart() {
-            // cart.value += 1
-            emit('add-to-cart', variants.value[selectedVariant.value].id)
+            cart.value += 1
+            // emit('add-to-cart', variants.value[selectedVariant.value].id)
+            emit('add-to-cart')
         }
 
         function removeFromCart(){
