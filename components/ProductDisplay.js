@@ -18,11 +18,7 @@ const productDisplay = {
             <p v-else>Out of Stock</p>
             <p>Shipping: {{shipping}}</p>
 
-            <div class="product-details">
-                <ul>
-                    <li v-for="detail in details" :key="detail">{{detail}}</li>
-                </ul>
-            </div>
+            <product-details :details="details"></product-details>
 
             <div v-for="(variant, index) in variants" :key="variant.id"
             @mouseover="updateVariant(index)"
@@ -55,7 +51,7 @@ const productDisplay = {
         } else {
             return 30
         }
-    })
+        })
 
         const reviews = ref([])
 
@@ -68,11 +64,13 @@ const productDisplay = {
         const product = ref('Boots')
         const brand = ref('SE 331')
         const inventory = ref(100)
+
         const details = ref([
             '50% cotton',
             '30% wool',
             '20% polyester'
         ])
+        
         const variants = ref([
             { id: 2234, color: 'green', image:'./assets/images/socks_green.jpg', quantity: 50 },
             { id: 2235, color: 'blue', image:'./assets/images/socks_blue.jpg', quantity: 0 }
@@ -114,7 +112,6 @@ const productDisplay = {
             image,
             inStock,
             inventory,
-            details,
             variants,
             addToCart,
             updateImage,
@@ -122,18 +119,8 @@ const productDisplay = {
             shipping,
             addReview,
             removeFromCart,
-            reviews
+            reviews,
+            details
         }
     }
 }
-
-const productDetails = {
-    props: {
-      details: {
-        type: Array,
-        required: true
-      }
-    },
-    
-  };
-  
