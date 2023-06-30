@@ -121,7 +121,8 @@ const productDisplay = {
             updateVariant,
             shipping,
             addReview,
-            removeFromCart
+            removeFromCart,
+            reviews
         }
     }
 }
